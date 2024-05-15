@@ -2,7 +2,7 @@ name: Daily Python Script
 
 on:
   schedule:
-    - cron: '30 1 * * *' # 09:30 Beijing Time
+    - cron: '10,30,40 1 * * *' # 09:30 Beijing Time
 
 jobs:
   run-python-script:
