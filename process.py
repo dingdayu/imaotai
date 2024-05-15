@@ -389,10 +389,7 @@ def getResult(mobile: str, token: str, bark: str):
         "Accept": "*/*",
         "MT-Network-Type": "WIFI",
         "MT-Token": token,
-        "MT-Team-ID": "",
         "MT-Request-ID": f"{int(time.time() * 1000)}{random.randint(1111111, 999999999)}{int(time.time() * 1000)}",
-        "BS-DVID": "Ywh4c-Ssx6Hx_Q1NyAn10IQ_qrZjctGhqH3HrPTLieb4Yejsl2tXRLGSZtZoBZSSqe1Rd6RDFrmCJFHdT2vUsUg",
-        "MT-V": "bf7823e651aa613b4a9e7cb9d0l",
         "MT-Bundle-ID": "com.moutai.mall",
         "User-Agent": "iOS;16.2;Apple;iPhone 13 Pro",
         "MT-K": str(int(time.time() * 1000)),
@@ -410,3 +407,5 @@ def getResult(mobile: str, token: str, bark: str):
             if not item.get("status") in (0, 1):
                 push_bark(f"{mobile} 成功预约", key=push_bark)
                 logging.info(f"{mobile} 成功预约")
+            else:
+                logging.info(f"{mobile} {item.get('itemName')} 预约失败")
